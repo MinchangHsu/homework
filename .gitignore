@@ -31,4 +31,5 @@ target/**
 .mvn/
 .mvn/**
 out/
+*.iml
 
