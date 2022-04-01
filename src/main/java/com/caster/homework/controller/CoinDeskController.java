@@ -12,6 +12,7 @@ import com.caster.homework.service.ExchangeRateService;
 import com.caster.homework.service.ExchangeRateTimeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,7 +42,7 @@ public class CoinDeskController {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return ResponseEntity.ok(200);
+        return ResponseEntity.ok("success");
     }
 
     @GetMapping("/transfer")
@@ -97,14 +98,14 @@ public class CoinDeskController {
             exchangeRate.setExchangeRateTime(exchangeRateTime);
             exchangeRateService.insert(exchangeRate);
         });
-        return ResponseEntity.ok(200);
+        return ResponseEntity.ok(coin);
     }
 
     @DeleteMapping("/{coinId}")
     public ResponseEntity deleteById(@PathVariable Long coinId) {
         // todo: delete by id coin data
         coinService.deleterById(coinId);
-        return ResponseEntity.ok(200);
+        return ResponseEntity.ok("success");
     }
 
     @PutMapping("/{coinId}")
@@ -125,6 +126,6 @@ public class CoinDeskController {
             exchangeRate.setExchangeRateTime(exchangeRateTime);
             exchangeRateService.insert(exchangeRate);
         });
-        return ResponseEntity.ok(200);
+        return ResponseEntity.ok("success");
     }
 }

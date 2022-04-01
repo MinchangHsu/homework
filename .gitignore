@@ -33,3 +33,6 @@ target/**
 out/
 *.iml
 
+.idea/workspace.xml
+.idea/compiler.xml
+homework.iml
